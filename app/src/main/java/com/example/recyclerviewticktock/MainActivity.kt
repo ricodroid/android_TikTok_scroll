@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         recyclerView = binding.rv
-        recyclerView.adapter = RecyclerAdapter()
+        recyclerView.adapter = RecyclerAdapter(this)
 
         // 一つのアイテムごとに停止
         val snapHelper = PagerSnapHelper()

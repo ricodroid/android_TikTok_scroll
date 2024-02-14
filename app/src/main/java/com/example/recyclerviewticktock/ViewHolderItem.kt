@@ -1,10 +1,7 @@
 package com.example.recyclerviewticktock
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewticktock.databinding.OneLayoutBinding
 
@@ -15,7 +12,7 @@ class ViewHolderItem(private val binding: OneLayoutBinding) : RecyclerView.ViewH
         binding.iv.setVideoPath(videoPath)
         binding.iv.setOnPreparedListener { mp ->
             // ビデオが準備できた後に再生を開始する場合はコメントを外してください
-            // mp.start()
+             mp.start()
         }
     }
 

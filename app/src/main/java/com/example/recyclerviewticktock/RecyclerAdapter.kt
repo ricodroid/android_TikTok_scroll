@@ -1,17 +1,18 @@
 package com.example.recyclerviewticktock
 
-import android.view.LayoutInflater
+import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.common.reflect.Reflection.getPackageName
 
-class RecyclerAdapter: RecyclerView.Adapter<ViewHolderItem>()  {
+class RecyclerAdapter(private val context: Context): RecyclerView.Adapter<ViewHolderItem>()  {
     private val videoList = listOf(
-        "android.resource://your_package_name/" + R.raw.bigbuckbunny,
-        "android.resource://your_package_name/" + R.raw.bigbuckbunny,
-        "android.resource://your_package_name/" + R.raw.bigbuckbunny,
-        "android.resource://your_package_name/" + R.raw.bigbuckbunny,
-        "android.resource://your_package_name/" + R.raw.bigbuckbunny,
-        "android.resource://your_package_name/" + R.raw.bigbuckbunny
+        "android.resource://" + context.packageName + "/" + R.raw.bigbuckbunny,
+        "android.resource://" + context.packageName + "/" + R.raw.move1,
+        "android.resource://" + context.packageName + "/" + R.raw.bigbuckbunny,
+        "android.resource://" + context.packageName + "/" + R.raw.move1,
+        "android.resource://" + context.packageName + "/" + R.raw.bigbuckbunny,
+        "android.resource://" + context.packageName + "/" + R.raw.move1,
         // 他のビデオパスを追加
     )
 
