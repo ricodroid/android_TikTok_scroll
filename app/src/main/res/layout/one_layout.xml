@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/iv"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <VideoView
         android:id="@+id/iv"
@@ -18,45 +12,97 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/baseline_thumb_up_off_alt_24" />
+
+    <ImageView
+        android:id="@+id/button2"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/icon_bad" />
+
+    <ImageView
+        android:id="@+id/button3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:srcCompat="@drawable/icon_star" />
+
+    <ImageView
+        android:id="@+id/button4"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:srcCompat="@drawable/icon_human" />
+
+    <ImageView
+        android:id="@+id/button5"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:srcCompat="@drawable/icons8__150" />
+
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/textView1"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="テキスト、テキスト"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button5" />
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:padding="16dp"
-        android:text="❤️"
-        app:layout_constraintBottom_toBottomOf="@id/iv"
-        app:layout_constraintEnd_toEndOf="@id/iv"
-        app:layout_constraintTop_toTopOf="@id/iv" />
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="# テキスト"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/tvName"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="16dp"-->
-    <!--        android:text="TextView"-->
-    <!--        android:textSize="20sp"-->
-    <!--        app:layout_constraintStart_toEndOf="@+id/iv"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="30dp"
+        android:text="本文テキスト・雨ニモマケズ 風ニモマケズ 雪ニモ夏ノ暑サニモマケヌ 丈夫ナカラダヲモチ 慾ハナク 決シテ瞋ラズ イツモシヅカニワラッテヰル 一日ニ玄米四合ト 味噌ト少シノ野菜ヲタベ アラユルコトヲ ジブンヲカンジョウニ入レズニ ヨクミキキシワカリ"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/tvMessage"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="16dp"-->
-    <!--        android:text="TextView"-->
-    <!--        app:layout_constraintStart_toEndOf="@+id/iv"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/tvName" />-->
-
-    <!--    <View-->
-    <!--        android:id="@+id/divider"-->
-    <!--        tools:layout_editor_absoluteX="1dp"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="1dp"-->
-    <!--        android:layout_marginTop="16dp"-->
-    <!--        android:background="?android:attr/listDivider"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/iv" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
