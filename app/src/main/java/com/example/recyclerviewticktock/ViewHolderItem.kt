@@ -3,6 +3,7 @@ package com.example.recyclerviewticktock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewticktock.databinding.OneLayoutBinding
@@ -15,6 +16,18 @@ class ViewHolderItem(private val binding: OneLayoutBinding) : RecyclerView.ViewH
     private lateinit var text3: TextView
     private lateinit var mottoMiruButton: TextView
     private lateinit var shukushouButton: TextView
+    private lateinit var icon1: ImageView
+    private lateinit var icon2: ImageView
+    private lateinit var icon3: ImageView
+    private lateinit var icon4: ImageView
+    private lateinit var icon5: ImageView
+
+    enum class IconButtonState {
+        TAPPED,
+        UN_TAPPED
+    }
+
+    private var currentButtonState = IconButtonState.UN_TAPPED
 
     fun bind(videoPath: String) {
         // VideoViewの設定
@@ -32,6 +45,13 @@ class ViewHolderItem(private val binding: OneLayoutBinding) : RecyclerView.ViewH
         mottoMiruButton = binding.mottoMiruButton
         shukushouButton = binding.shukushouButton
 
+        /** いいねボタンとかのアイコン類 */
+        icon1 = binding.icon1
+        icon2 = binding.icon2
+        icon3 = binding.icon3
+        icon4 = binding.icon4
+        icon5 = binding.icon5
+
         if (isLongText(text3.text)) {
             // 13文字以上なら、もっと見るボタンを表示する
             toggleMottoMiruButtonVisibility(mottoMiruButton, View.VISIBLE)
@@ -43,13 +63,29 @@ class ViewHolderItem(private val binding: OneLayoutBinding) : RecyclerView.ViewH
             toggleMottoMiruButtonVisibility(shukushouButton, View.VISIBLE)
         }
 
+        // ViewHolderItemのクラスに
+        // クリックリスナーを継承させる方法わからなかったので、個別で対応。未熟者
         mottoMiruButton.setOnClickListener { v ->
             onClick(v)
         }
         shukushouButton.setOnClickListener { v ->
             onClick(v)
         }
-
+        icon1.setOnClickListener { v ->
+            onClick(v)
+        }
+        icon2.setOnClickListener { v ->
+            onClick(v)
+        }
+        icon3.setOnClickListener { v ->
+            onClick(v)
+        }
+        icon4.setOnClickListener { v ->
+            onClick(v)
+        }
+        icon5.setOnClickListener { v ->
+            onClick(v)
+        }
     }
 
     /**
@@ -87,7 +123,7 @@ class ViewHolderItem(private val binding: OneLayoutBinding) : RecyclerView.ViewH
         }
     }
 
-   fun onClick(v: View?) {
+   private fun onClick(v: View?) {
         when (v) {
             mottoMiruButton -> {
                 println("もっと見るテキストがクリックされました！")
@@ -104,6 +140,69 @@ class ViewHolderItem(private val binding: OneLayoutBinding) : RecyclerView.ViewH
                 toggleMottoMiruButtonVisibility(mottoMiruButton, View.VISIBLE)
                 mottoMiruButton.text = "...もっと見る"
             }
+
+            icon1 -> {
+                println("アイコン1がクリックされました！")
+            }
+
+            icon2 -> {
+                // スターアイコン
+                println("アイコン2がクリックされました！")
+                toggleButtonState()
+                updateStarButtonImage(icon2)
+            }
+
+            icon3 -> {
+                // グッドアイコン
+                println("アイコン3がクリックされました！")
+                toggleButtonState()
+                updateGoodButtonImage(icon3)
+            }
+
+            icon4 -> {
+                // バッドアイコン
+                println("アイコン4がクリックされました！")
+                toggleButtonState()
+                updateBadButtonImage(icon4)
+            }
+
+            icon5 -> {
+                println("アイコン5がクリックされました！")
+            }
         }
+    }
+
+    private fun toggleButtonState() {
+        currentButtonState = when (currentButtonState) {
+            IconButtonState.UN_TAPPED -> IconButtonState.TAPPED
+            IconButtonState.TAPPED -> IconButtonState.UN_TAPPED
+        }
+    }
+
+    private fun updateGoodButtonImage(button: ImageView) {
+        // 現在の状態に応じて画像を切り替える
+        val imageResource = when (currentButtonState) {
+            IconButtonState.UN_TAPPED -> R.drawable.baseline_thumb_up_off_alt_24
+            IconButtonState.TAPPED -> R.drawable.icon_good_tapped
+        }
+        button.setImageResource(imageResource)
+    }
+
+    private fun updateBadButtonImage(button: ImageView) {
+        // 現在の状態に応じて画像を切り替える
+        val imageResource = when (currentButtonState) {
+            IconButtonState.UN_TAPPED -> R.drawable.icon_bad_tapped
+            IconButtonState.TAPPED -> R.drawable.icon_bad
+        }
+        button.setImageResource(imageResource)
+    }
+
+    private fun updateStarButtonImage(button: ImageView) {
+        // 現在の状態に応じて画像を切り替える
+        val imageResource = when (currentButtonState) {
+            IconButtonState.UN_TAPPED -> R.drawable.icon_star
+            IconButtonState.TAPPED -> R.drawable.icon_star_tapped
+        }
+        button.setImageResource(imageResource)
     }
 }

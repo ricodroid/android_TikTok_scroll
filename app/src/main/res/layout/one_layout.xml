@@ -14,63 +14,63 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/button"
+        android:id="@+id/icon1"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginTop="250dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/icon2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/baseline_thumb_up_off_alt_24" />
-
-    <ImageView
-        android:id="@+id/button2"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/icon_bad" />
-
-    <ImageView
-        android:id="@+id/button3"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toTopOf="@id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:srcCompat="@drawable/icon_star" />
-
-    <ImageView
-        android:id="@+id/button4"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toTopOf="@id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
         app:srcCompat="@drawable/icon_human" />
 
     <ImageView
-        android:id="@+id/button5"
+        android:id="@+id/icon2"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/icon3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon1"
+        app:srcCompat="@drawable/icon_star" />
+
+    <ImageView
+        android:id="@+id/icon3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/icon4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon2"
+        app:srcCompat="@drawable/baseline_thumb_up_off_alt_24" />
+
+    <ImageView
+        android:id="@+id/icon4"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/icon5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon3"
+        app:srcCompat="@drawable/icon_bad" />
+
+    <ImageView
+        android:id="@+id/icon5"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/icon4"
         app:srcCompat="@drawable/icons8__150" />
 
     <TextView
@@ -85,7 +85,7 @@
         android:text="テキスト、テキスト"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button5" />
+        app:layout_constraintTop_toTopOf="@+id/icon5" />
 
     <TextView
         android:id="@+id/textView2"
